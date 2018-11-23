@@ -17,7 +17,7 @@ namespace ConventionsAndConstraints.Infrastructure
 
         public bool Accept(ActionConstraintContext context)
         {
-            return context.RouteContext.HttpContext.Request.Headers["User-Agent"].Any(h => h.ToLower().Contains(_subString));
+            return context.RouteContext.HttpContext.Request.Headers["User-Agent"].Any(h => h.ToLower().Contains(_subString)) || context.Candidates.Count == 1;
         }
     }
 }

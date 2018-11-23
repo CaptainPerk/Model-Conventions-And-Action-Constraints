@@ -12,7 +12,7 @@ namespace ConventionsAndConstraints.Controllers
         [UserAgent("Edge")]
         public IActionResult Other() => View("Result", new Result { Controller = nameof(HomeController), Action = nameof(Other) });
 
-        [AddAction("Details")]
+        [UserAgent("Edge")]
         public IActionResult List() => View("Result", new Result {Controller = nameof(HomeController), Action = nameof(List)});
     }
 }
