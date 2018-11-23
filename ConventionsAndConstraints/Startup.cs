@@ -1,5 +1,4 @@
-﻿using ConventionsAndConstraints.Infrastructure;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -9,10 +8,7 @@ namespace ConventionsAndConstraints
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(options =>
-            {
-                options.Conventions.Add(new ActionNamePrefixAttribute("Do"));
-            });
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
