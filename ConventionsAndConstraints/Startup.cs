@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ConventionsAndConstraints.Infrastructure;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -8,6 +9,7 @@ namespace ConventionsAndConstraints
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<UserAgentComparer>();
             services.AddMvc();
         }
 
