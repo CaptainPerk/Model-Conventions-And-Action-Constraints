@@ -8,7 +8,11 @@ namespace ConventionsAndConstraints.Controllers
     {
         public IActionResult Index() => View("Result", new Result {Controller = nameof(HomeController), Action = nameof(Index)});
 
-        [AddAction("Details")]
+        [ActionName("Index")]
+        [UserAgent("Edge")]
+        public IActionResult Other() => View("Result", new Result { Controller = nameof(HomeController), Action = nameof(Other) });
+
+        [UserAgent("Edge")]
         public IActionResult List() => View("Result", new Result {Controller = nameof(HomeController), Action = nameof(List)});
     }
 }

@@ -9,10 +9,8 @@ namespace ConventionsAndConstraints
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(options =>
-            {
-                options.Conventions.Add(new ActionNamePrefixAttribute("Do"));
-            });
+            services.AddSingleton<UserAgentComparer>();
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
